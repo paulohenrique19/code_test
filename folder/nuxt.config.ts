@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   modules: [
-    '@nuxt/image',
+    '@nuxt/image', 'vue3-carousel-nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
@@ -21,11 +21,12 @@ export default defineNuxtConfig({
     vue: {
       template: {
         transformAssetUrls: {
-          img: ['src', 'data-src'],
+          /*img: ['src', 'data-src'],
           image: ['xlink:href', 'href'],
           'v-img': ['src', 'lazy-src'],
           'v-card-media': ['src', 'lazy-src'],
           'v-carousel-item': ['src', 'src'],
+          */
         },
       },
     },
