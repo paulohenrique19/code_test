@@ -39,18 +39,19 @@
       <!---->
       <!--   <v-icon>mdi-triangle</v-icon> -->
       <!-- </v-system-bar> -->
+
   
-<v-app-bar color="red" height="100">
-  <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-  <v-app-bar-title>
-    <div style="padding: 10px;">
-        <nuxt-img
-        :src="imgUrl"
-        width="100"
-        height="100"
-        layout="responsive"
-        ></nuxt-img>
-    </div>
+  <v-app-bar color="red" height="100">
+    <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar-title>
+      <div style="padding: 10px;">
+          <nuxt-img
+          :src="imgUrl"
+          width="100"
+          height="100"
+          layout="responsive"
+          ></nuxt-img>
+      </div>
   </v-app-bar-title>
   
 
@@ -109,20 +110,66 @@
           </v-card-text>
         </v-card>
   </v-dialog>
-
-
 </v-app-bar>
 
 
 
 <v-navigation-drawer v-model="drawer" temporary>
-  <v-list-item link title="Home"></v-list-item>
-  <v-divider></v-divider>
-  <v-list-item link title="Produtos"></v-list-item>
-  <v-divider></v-divider>
-  <v-list-item link title="Login"></v-list-item>
-
+  <v-list>
+      <v-list-item link title="Home"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item link title="Produtos"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item link title="Login"></v-list-item>
+  </v-list>
 </v-navigation-drawer>
+
+
+<!--Carrossel não carrega as imagens, tentei nuxt-img, v-img, módulos próprios de carrossel do nuxt, bootstrap...-->
+
+<v-container fluid style="max-width: 1200px; padding: 100px">
+    <v-row align="center">
+      <v-carousel>
+        <v-carousel-item >
+        </v-carousel-item>
+        <v-carousel-item src='https://cdn.vuetifyjs.com/images/cards/hotel.jpg' cover ></v-carousel-item>
+        <v-carousel-item src='https://cdn.vuetifyjs.com/images/cards/sunshine.jpg' cover></v-carousel-item>
+      </v-carousel>
+    </v-row>
+
+    <v-container>
+      <br>
+      <p>
+        <h1>Texto de apresentação</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt repellat libero, mollitia debitis in nisi aspernatur at assumenda molestias inventore officia molestiae laborum consectetur tempora dolor corporis.</p>
+      </p>
+
+
+    </v-container>
+    
+</v-container>
+
+<v-footer class="bg-red text-center d-flex flex-column">
+    <div>
+      <v-btn
+        v-for="icon in IconsFooter()"
+        :key="icon"
+        class="mx-4"
+        :icon="icon"
+        variant="text"
+      ></v-btn>
+    </div>
+
+    <div class="pt-0">Todos os direitos reservados</div>
+
+    <v-divider></v-divider>
+
+    <div>
+      {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+    </div>
+  </v-footer>
+
+
 
       <!---->
       <!-- <v-main class="bg-grey-lighten-2"> -->
@@ -148,7 +195,8 @@
   <script setup lang="ts">
   
   
-  import { ref } from 'vue'
+  import { ref } from 'vue'  
+
   
   const imgUrl= "/img/logo.svg"
 
@@ -190,6 +238,8 @@
     showPassword.value = !showPassword.value;
   }
 
+
+
   function register() {
     // Lógica para lidar com o registro
     console.log('Registrando usuário:', username.value, 'Senha:', password.value);
@@ -223,7 +273,43 @@
 
   }
 
+
+
+  function IconsFooter() {
+    const icons = [
+      'mdi-facebook',
+      'mdi-twitter',
+      'mdi-linkedin',
+      'mdi-instagram',
+    ];
+    
+    return icons;
+    
+  }
+
+
+  //REDIRECIONAMENTO NÃO FUNCIONA, ENTÃO VAI TER QUE MUDAR DE PÁGINA NA MÃO
+
   // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+  // APARTIR DAQUI PRA BAIXO É TEU CÓDIGO
+
+
+
+
+
+
+
+
+
+
 
   const drawer = ref(null)
   
